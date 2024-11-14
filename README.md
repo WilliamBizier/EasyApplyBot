@@ -1,23 +1,7 @@
 # LinkedIn Easy Apply Bot
 
-_Automate your LinkedIn job applications with ease!_
-
-This Python and Selenium-based bot automates applying to jobs using the Easy Apply feature on LinkedIn.
-
-_26-Jul-24: If you are getting `OSError: [WinError 193] %1 is not a valid Win32 application`, 
-please delete `chromedriver` from your user directory \drivers\chromedriver (use Google to find how). See 
-[here](https://github.com/voidbydefault/EasyApplyBot/issues/64#issuecomment-2253114234)._
-
-## Key Features
-
-- Apply to thousands of jobs effortlessly.
-- Track application dates and times for performance analysis. <span style="color:green">(New!)</span>
-- ~~- Windows executable available for easy setup. <span style="color:green">(New!)</span>~~
-
-## Important
-
-- Use at your own risk. LinkedIn may restrict or suspend accounts for bot usage (hasn't happened so far).
-- Consider this an educational project.
+# Personal Modifications
+[] Implementing Google Sheets into this to be able to keep track of what was applied too
 
 ## Getting Started
 
@@ -31,12 +15,4 @@ please delete `chromedriver` from your user directory \drivers\chromedriver (use
 - **Need assistance?** Comment under my Youtube videos for general inquiries.
 - **Genuine issues** Raise issues page at my GitHub.
 
-## Support This Project
 
-Buy me a coffee through [PayPal](https://paypal.me/voidbydefault) if you find this tool helpful!
-
-## Credits
-
-- Original developer: [Nathan Duma](https://github.com/NathanDuma)
-- Significant code updates: [Micheal Dingess](https://github.com/madingess/)
-- Maintenance and improvements: [voidbydefault](https://github.com/voidbydefault)
