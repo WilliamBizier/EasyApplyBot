@@ -1,4 +1,4 @@
-import time, random, csv, pyautogui, pdb, traceback, sys, os
+import time, random, csv, pyautogui, pdb, traceback, sys, os, selenium
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException

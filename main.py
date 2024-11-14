@@ -1,10 +1,12 @@
-import yaml, os
+import yaml
+import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from validate_email import validate_email
 from webdriver_manager.chrome import ChromeDriverManager
 from linkedineasyapply import LinkedinEasyApply
+
 
 def init_browser():
     browser_options = Options()
@@ -27,10 +29,12 @@ def init_browser():
 
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=browser_options)
-    driver.implicitly_wait(1)  # Wait time in seconds to allow loading of elements
+    # Wait time in seconds to allow loading of elements
+    driver.implicitly_wait(1)
     driver.set_window_position(0, 0)
     driver.maximize_window()
     return driver
+
 
 def validate_yaml():
     with open("config.yaml", 'r', encoding='utf-8') as stream:
@@ -62,7 +66,8 @@ def validate_yaml():
 
     for mandatory_param in mandatory_params:
         if mandatory_param not in parameters:
-            raise Exception(mandatory_param + ' is not defined in the config.yaml file!')
+            raise Exception(mandatory_param +
+                            ' is not defined in the config.yaml file!')
 
     assert validate_email(parameters['email'])
     assert len(str(parameters['password'])) > 0
@@ -100,7 +105,8 @@ def validate_yaml():
     assert parameters['distance'] in approved_distances
     assert len(parameters['positions']) > 0
     assert len(parameters['locations']) > 0
-    assert len(parameters['uploads']) >= 1 and 'resume' in parameters['uploads']
+    assert len(parameters['uploads']
+               ) >= 1 and 'resume' in parameters['uploads']
     assert len(parameters['checkboxes']) > 0
 
     checkboxes = parameters.get('checkboxes', [])
@@ -116,7 +122,8 @@ def validate_yaml():
     assert isinstance(parameters['universityGpa'], (int, float))
 
     languages = parameters.get('languages', [])
-    language_types = {'none', 'conversational', 'professional', 'native or bilingual'}
+    language_types = {'none', 'conversational',
+                      'professional', 'native or bilingual'}
     for language in languages:
         assert languages[language].lower() in language_types
 
@@ -136,6 +143,7 @@ def validate_yaml():
         assert eeo[survey_question] != ''
 
     return parameters
+
 
 if __name__ == '__main__':
     parameters = validate_yaml()
